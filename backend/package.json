@@ -1,0 +1,29 @@
+{
+  "name": "bullmq-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "worker": "nodemon worker.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomas-catt/bullmq-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomas-catt/bullmq-demo/issues"
+  },
+  "homepage": "https://github.com/thomas-catt/bullmq-demo#readme",
+  "description": "",
+  "dependencies": {
+    "bullmq": "^5.66.5",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  }
+}
