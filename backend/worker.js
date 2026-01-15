@@ -17,7 +17,7 @@ const worker = new Worker(
 			throw { success: false, message: 'Job is missing a valid email' };
 		}
 
-		await sleep(5000); // sending mail
+		await sleep(2000); // sending mail
 
 		if (email.includes('fail')) {
 			throw { success: false, message: "Failed to send email." };
