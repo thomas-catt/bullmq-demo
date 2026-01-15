@@ -1,0 +1,37 @@
+Goal
+Build a small application where a user submits an email from a web page, a background job processes it using
+BullMQ, and the frontend tracks job completion.
+Tech Stack
+Backend: Node.js, Express.js, BullMQ, Redis
+Frontend: React / Vue
+Backend Requirements
+1. Create Job API
+POST /jobs
+Request body:
+{ "email": "user@example.com" }
+• Email is required (return 400 if missing)
+• Add job to a BullMQ queue called email-queue
+• Return jobId in response
+2. Worker
+• Worker runs separately from Express
+• Wait 2 seconds to simulate email sending
+• Log: Email sent to user@example.com
+• If email contains 'fail', throw an error
+• Retry job 1 time
+3. Job Status API
+GET /jobs/:id
+Return job status: waiting, active, completed, or failed
+Return 404 if job does not exist
+Frontend Requirements
+• Input field for email
+• Submit button
+• Display job status on screen
+Flow:
+1. Submit email
+2. Call POST /jobs
+3. Receive jobId
+4. Poll GET /jobs/:id every 2 seconds
+5. Show job status and stop when completed or failed
+Project Structure (Suggested)
+/backend (server.js, worker.js)
+/frontend (index.html, script.js, style.css)
